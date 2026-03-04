@@ -1,0 +1,59 @@
+/**
+ * PageSpeed Portfolio - Admin Styles
+ *
+ * @package PageSpeed_Portfolio
+ */
+
+/* Score display in metabox */
+.psp-admin-scores {
+	display: flex;
+	gap: 1.5rem;
+	padding: 0.75rem 0;
+}
+
+.psp-admin-score-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 80px;
+}
+
+.psp-admin-score-value {
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.psp-admin-score-label {
+	font-size: 0.8125rem;
+	color: #646970;
+	margin-top: 0.25rem;
+}
+
+.psp-last-fetched {
+	color: #646970;
+	font-style: italic;
+}
+
+.psp-no-scores {
+	color: #646970;
+	font-style: italic;
+}
+
+/* Refresh button status */
+#psp-refresh-status {
+	margin-left: 0.5rem;
+	font-style: italic;
+}
+
+#psp-refresh-status.psp-status--success {
+	color: #00a32a;
+}
+
+#psp-refresh-status.psp-status--error {
+	color: #d63638;
+}
+
+#psp-refresh-status.psp-status--loading {
+	color: #646970;
+}

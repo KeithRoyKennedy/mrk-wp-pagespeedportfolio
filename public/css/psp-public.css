@@ -1,0 +1,237 @@
+/**
+ * PageSpeed Portfolio - Public Styles
+ *
+ * @package PageSpeed_Portfolio
+ */
+
+/* Grid Layout */
+.psp-portfolio-grid {
+	display: grid;
+	grid-template-columns: repeat(var(--psp-columns, 3), 1fr);
+	gap: 2rem;
+	padding: 1rem 0;
+}
+
+@media (max-width: 1024px) {
+	.psp-portfolio-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	.psp-portfolio-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Site Card */
+.psp-site-card {
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+	overflow: hidden;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.psp-site-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Card Image */
+.psp-site-card__image {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 16 / 10;
+}
+
+.psp-site-card__image a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.psp-site-card__thumbnail {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.psp-site-card:hover .psp-site-card__thumbnail {
+	transform: scale(1.03);
+}
+
+/* Card Content */
+.psp-site-card__content {
+	padding: 1.25rem 1.5rem 1.5rem;
+}
+
+/* Card Title */
+.psp-site-card__title {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin: 0 0 1rem;
+	line-height: 1.3;
+	color: #1e293b;
+}
+
+.psp-site-card__title a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.psp-site-card__title a:hover {
+	color: #3b82f6;
+}
+
+/* Strategy Section */
+.psp-site-card__strategy-section {
+	margin-bottom: 1rem;
+}
+
+.psp-site-card__strategy-section:last-of-type {
+	margin-bottom: 0.5rem;
+}
+
+.psp-site-card__strategy-label {
+	display: flex;
+	align-items: center;
+	gap: 0.375rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: #475569;
+	margin: 0 0 0.625rem;
+	padding-bottom: 0.375rem;
+	border-bottom: 1px solid #f1f5f9;
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+}
+
+.psp-site-card__strategy-label .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	color: #94a3b8;
+}
+
+/* Scores Container */
+.psp-site-card__scores {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.5rem;
+}
+
+/* Score Gauge */
+.psp-score-gauge {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	min-width: 0;
+}
+
+.psp-score-gauge__circle {
+	position: relative;
+	width: 64px;
+	height: 64px;
+}
+
+.psp-score-gauge__svg {
+	width: 100%;
+	height: 100%;
+	transform: rotate(-90deg);
+}
+
+.psp-score-gauge__bg {
+	fill: none;
+	stroke: #e2e8f0;
+	stroke-width: 8;
+}
+
+.psp-score-gauge__fill {
+	fill: none;
+	stroke-width: 8;
+	stroke-linecap: round;
+	transition: stroke-dashoffset 1s ease-out;
+}
+
+/* Score Colors */
+.psp-score--good .psp-score-gauge__fill {
+	stroke: #0cce6b;
+}
+
+.psp-score--good .psp-score-gauge__value {
+	color: #0cce6b;
+}
+
+.psp-score--average .psp-score-gauge__fill {
+	stroke: #ffa400;
+}
+
+.psp-score--average .psp-score-gauge__value {
+	color: #ffa400;
+}
+
+.psp-score--poor .psp-score-gauge__fill {
+	stroke: #ff4e42;
+}
+
+.psp-score--poor .psp-score-gauge__value {
+	color: #ff4e42;
+}
+
+/* Score Value */
+.psp-score-gauge__value {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.125rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+/* Score Label */
+.psp-score-gauge__label {
+	font-size: 0.6875rem;
+	font-weight: 500;
+	color: #64748b;
+	text-align: center;
+	margin-top: 0.375rem;
+	line-height: 1.2;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+/* Card Meta */
+.psp-site-card__meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.75rem;
+	color: #94a3b8;
+	padding-top: 0.75rem;
+	border-top: 1px solid #f1f5f9;
+}
+
+.psp-site-card__strategy {
+	background: #f1f5f9;
+	padding: 0.125rem 0.5rem;
+	border-radius: 9999px;
+	font-weight: 500;
+	color: #64748b;
+}
+
+/* No Sites Message */
+.psp-no-sites {
+	text-align: center;
+	color: #94a3b8;
+	font-size: 1rem;
+	padding: 2rem 0;
+}
